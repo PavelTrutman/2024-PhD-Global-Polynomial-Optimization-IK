@@ -49,10 +49,10 @@
      breaklinks=true,pdfpagemode=UseNone,plainpages=false,
 %     backref=true,pagebackref=true,breaklinks=true,
      pdfauthor={Pavel Trutman},
-     pdfsubject={Master thesis},
-     pdftitle={Semidefinite Programming for Geometric Problems in Computer Vision},
+     pdfsubject={PhD thesis},
+     pdftitle={Global Polynomial Optimization in Inverse Kinematics},
      pdfcreator={Pavel Trutman},
-     pdfkeywords={computer vision} {robotics} {minimal problems} {polynomials equations} {Gr\"obner basis},
+     pdfkeywords={Kinematics} {Redundant robots} {Optimization} {Mechanism design} {Groebner basis}
   }
 \else
   \usepackage{color,graphicx}
