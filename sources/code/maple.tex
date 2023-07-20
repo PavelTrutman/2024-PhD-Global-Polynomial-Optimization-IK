@@ -1,0 +1,11 @@
+\begin{lstlisting}[language=maple, caption={Maple code for the proof of Theorem~\ref{THM}.}, labellis={maple}]
+# compute the reduced Groebner basis from polynomials pj and qi (stored in the variable eq)
+G := Basis(eq, tdeg(op(indets(eq)))):
+# select degree two polynomials from the basis and compute a new reduced Groebner basis
+idxDegTwo := SearchAll(2, map(degree, G)):
+eqPrime := G[[idxDegTwo]]:
+GPrime := Basis(eqPrime, tdeg(op(indets(eq)))):
+# compare the two bases
+evalb(G = GPrime);
+@@\textit{\color{blue}{\hfill True\hfill}}
+\end{lstlisting}

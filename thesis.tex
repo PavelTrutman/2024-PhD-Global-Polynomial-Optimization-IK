@@ -1,0 +1,193 @@
+% Document: Bachelor Thesis: Minimal Problem Solver Generator
+% Author: Pavel Trutman
+
+\documentclass[misc,11pt]{cmpthesis}
+\usepackage[czech,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forloop}
+\usepackage{bm}
+
+\usepackage{subcaption}
+\usepackage{pdflscape}
+\usepackage{multirow}
+\usepackage{dirtree}
+
+\usepackage[exponent-product=\cdot]{siunitx}
+
+% for better verbatim environment
+\usepackage{fancyvrb}
+
+% to inlucude pdf pages
+\usepackage{pdfpages}
+
+% list of symbols and abbreviations
+\usepackage[acronym,nonumberlist,style=long,sort=def]{glossaries}
+\setlength{\glsdescwidth}{0.6\linewidth}
+\setlength{\glspagelistwidth}{0.4\linewidth}
+\renewcommand*{\glsgroupskip}{}
+\newcommand{\Acronym}[2]{\newacronym{#1}{#1}{#2}}
+%\input{acronyms}
+%\makeglossaries
+
+% algorithmic macros and settings
+\newcounter{counter}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\algdef{S}[IF]{IfML}[1]{\algorithmicif\ #1}
+\newcommand{\StatexIndent}[1][1]{
+  \Statex\forloop{counter}{0}{\value{counter} < #1}{\hskip\algorithmicindent\hskip-0.25em}
+}
+
+% cross references
+\newcommand{\labeleq}[1]{\label{equation:#1}}
+\newcommand{\refeq}[1]{Equation~(\ref{equation:#1})}
+\newcommand{\refeqb}[1]{(\ref{equation:#1})}
+\newcommand{\labelfig}[1]{\label{figure:#1}}
+\newcommand{\reffig}[1]{Figure~\ref{figure:#1}}
+\newcommand{\reffignum}[1]{\ref{figure:#1}}
+\newcommand{\labeltab}[1]{\label{table:#1}}
+\newcommand{\reftab}[1]{Table~\ref{table:#1}}
+\newcommand{\labelsec}[1]{\label{section:#1}}
+\newcommand{\refsec}[1]{Section~\ref{section:#1}}
+\newcommand{\labelcha}[1]{\label{chapter:#1}}
+\newcommand{\refcha}[1]{Chapter~\ref{chapter:#1}}
+\newcommand{\reflis}[1]{Listing~\ref{listing:#1}}
+\newcommand{\labeldef}[1]{\label{definition:#1}}
+\newcommand{\refdef}[1]{Definition~\ref{definition:#1}}
+\newcommand{\labelcol}[1]{\label{corollary:#1}}
+\newcommand{\refcol}[1]{Corollary~\ref{corollary:#1}}
+\newcommand{\labelthe}[1]{\label{theorem:#1}}
+\newcommand{\refthe}[1]{Theorem~\ref{theorem:#1}}
+
+% math symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\ie}{i.e.}
+\newcommand{\hide}[1]{}
+\newcommand{\Ideal}{\ensuremath{\mathcal{I}}}
+\newcommand{\MM}{\ensuremath{\mathcal{X}}}
+\newcommand{\FFFF}{\ensuremath{F_4}}
+\newcommand{\FFFFF}{\ensuremath{F_5}}
+\DeclareMathOperator{\rank}{rank}
+% theorems, definitions, examples
+\let\proof\relax
+\let\endproof\relax
+\usepackage{amsthm}
+\newtheoremstyle{definitionStyle}
+  {}
+  {}
+  {}
+  {}
+  {\bfseries}
+  {.}
+  { }
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+\theoremstyle{definitionStyle}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{example}[definition]{Example}
+\newtheorem{corollary}[definition]{Corollary}
+\newcommand{\thecite}[2][]{\textnormal{\ifthenelse{\equal{#1}{}}{\cite{#2}}{\cite[#1]{#2}}}}
+
+\def\CPP{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\textbf{++}}}}
+
+% listings
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+\makeatletter
+\def\lst@numbersymbol{}
+\lst@Key{numbersymbol}{}{\def\lst@numbersymbol{#1}}
+%\lst@Key{numbers}{none}{%
+%  \let\lst@PlaceNumber\@empty
+%  \lstKV@SwitchCases{#1}%
+%  {none&\\%
+%  left&\def\lst@PlaceNumber{\llap{\normalfont
+%      \lst@numberstyle{\thelstnumber\lst@numbersymbol}\kern\lst@numbersep}}\\%
+%  right&\def\lst@PlaceNumber{\rlap{\normalfont
+%      \kern\linewidth \kern\lst@numbersep
+%      \lst@numberstyle{\lst@numbersymbol\thelstnumber}}}%
+%  }{\PackageError{Listings}{Numbers #1 unknown}\@ehc}}
+\def\lst@labellis{}
+\lst@Key{labellis}{}{\def\lst@label{listing:#1}}
+\makeatother
+\lstset{basicstyle=\normalfont\small\ttfamily,
+  columns=fixed,
+  basewidth=0.5em,
+  showstringspaces=false,
+  breaklines=true,
+  commentstyle=\color{blue},
+  keywordstyle=\color{red},
+  escapeinside={@@}{@@},
+  numbers=left,
+  numberstyle=\footnotesize\normalfont,
+  numbersymbol=:,
+  captionpos=t,
+  frame=top,
+  frame=bottom,
+  xleftmargin=25pt,
+  framexleftmargin=25pt,
+}
+\lstdefinelanguage{maple}{
+    morekeywords={Basis, tdeg, op, indets, ListTools, SearchAll, map, degree, evalb},
+    sensitive=false,
+    morecomment=[l]{\#},
+    morestring=[b]"
+}
+
+\startThesisInfo
+\title{Semidefinite Programming Applied in Robotics}
+\author{Pavel Trutman}
+\CMPAdvisor{Ing. Tom\'a\v s Pajdla, PhD.}
+\CMPReportNo{}
+\CMPAcknowledgement{\centering This work has been supported by the EU Structural and Investment Funds, Operational Programe Research, Development and Education under the project IMPACT (reg.\ no.\ CZ$.02.1.01/0.0/0.0/15\_003/0000468$) and Grant Agency of the CTU Prague project SGS19/173/OHK3/3T/13.}
+
+\CMPEmail{pavel.trutman@cvut.cz}
+%\CMPDocumentURL{http://cmp.felk.cvut.cz/~trutmpav/bachelor-thesis/thesis/thesis.pdf}
+\CMPSideBarText{PhD Thesis Proposal}
+\stopThesisInfo
+
+% ============================== your definitions (abbreviations etc.)
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\LM}{LM}
+
+\setitemize{noitemsep,topsep=0.2cm,parsep=0.2cm,partopsep=0pt,leftmargin=1cm}
+\setenumerate{noitemsep,topsep=0.2cm,parsep=0.2cm,partopsep=0pt,leftmargin=1cm}
+
+% =========================================================== settings
+\graphicspath{{images/}}
+
+% ========================================================== text body
+\begin{document}
+
+\input{abstract}
+\cleardoublepage
+%\cleardoublepage\def\thepage{\arabic{page}}\setcounter{page}{1}
+\tableofcontents\pagestyle{headings}
+\cleardoublepage
+%\listofalgorithms
+
+%\glsaddall
+%\printglossary[type=acronym,title=List of Symbols and Abbreviations]
+
+\input{introduction}
+
+\input{polynomials}
+
+\input{ikt}
+
+\input{goals}
+
+\bibliographystyle{plain}
+\bibliography{citations}{}
+
+\end{document}
