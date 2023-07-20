@@ -1,0 +1,34 @@
+# LaTeX
+*.acn
+*.acr
+*.alg
+*.apx
+*.aux
+*.bbl
+*.bga
+*.blg
+*.brf
+*.dvi
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.loa
+*.lof
+*.log
+*.lol
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.nav
+*.out
+*.pdf
+*.snm
+*.toc
+
+# Vim
+*.swp
