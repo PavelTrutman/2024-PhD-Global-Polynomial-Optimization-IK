@@ -3,7 +3,7 @@ SHELL:=/bin/bash -O extglob
 # fast compiling
 Fast ?= FALSE
 
-TEXS = thesis.tex abstract.tex introduction.tex polynomials.tex ikt.tex 7DOF.tex conclusions.tex introduction_old.tex polynomials_old.tex ikt_old.tex sources/code/maple.tex goals_old.tex
+TEXS = thesis.tex acronyms.tex abstract.tex introduction.tex polynomials.tex ikt.tex 7DOF.tex conclusions.tex introduction_old.tex polynomials_old.tex ikt_old.tex sources/code/maple.tex goals_old.tex
 
 TEMPLATE = cmpthesis.cls cmpcover.sty images/CIIRC.pdf images/CTU.pdf
 
@@ -43,7 +43,7 @@ thesis.pdf: $(TEXS) citations.bib $(TEMPLATE) $$(addprefix images/, $(IMAGES)) $
 	sed -i 's/\eqB/\begin{align}/g' !(thesis).tex
 	sed -i 's/\eqE/\end{align}/g' !(thesis).tex
 	pdflatex thesis.tex
-	#makeglossaries thesis
+	makeglossaries thesis
 	if [ "$(Fast)" = "FALSE" ]; then \
 		bibtex thesis; \
 		pdflatex thesis.tex; \

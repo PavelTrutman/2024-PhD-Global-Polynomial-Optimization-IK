@@ -30,8 +30,8 @@
 \setlength{\glspagelistwidth}{0.4\linewidth}
 \renewcommand*{\glsgroupskip}{}
 \newcommand{\Acronym}[2]{\newacronym{#1}{#1}{#2}}
-%\input{acronyms}
-%\makeglossaries
+\input{acronyms}
+\makeglossaries
 
 % algorithmic macros and settings
 \newcounter{counter}
@@ -166,16 +166,16 @@
 
 % ========================================================== text body
 \begin{document}
-
+\cleardoublepage\def\thepage{\roman{page}}\setcounter{page}{3}
 \input{abstract}
 \cleardoublepage
-%\cleardoublepage\def\thepage{\arabic{page}}\setcounter{page}{1}
+\cleardoublepage\def\thepage{\arabic{page}}\setcounter{page}{1}
 \tableofcontents\pagestyle{headings}
 \cleardoublepage
 %\listofalgorithms
 
-%\glsaddall
-%\printglossary[type=acronym,title=List of Symbols and Abbreviations]
+\glsaddall
+\printglossary[type=acronym,title=List of Symbols and Abbreviations]
 
 \input{introduction}
 
