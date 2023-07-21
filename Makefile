@@ -3,7 +3,7 @@ SHELL:=/bin/bash -O extglob
 # fast compiling
 Fast ?= FALSE
 
-TEXS = thesis.tex abstract.tex introduction.tex polynomials.tex ikt.tex sources/code/maple.tex goals.tex
+TEXS = thesis.tex abstract.tex introduction.tex polynomials.tex ikt.tex 7DOF.tex conclusions.tex introduction_old.tex polynomials_old.tex ikt_old.tex sources/code/maple.tex goals_old.tex
 
 TEMPLATE = cmpthesis.cls cmpcover.sty images/CIIRC.pdf images/CTU.pdf
 

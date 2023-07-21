@@ -1,16 +1,1 @@
 \chapter{Introduction}
-Path planning, collision detection, localization, mapping, controlling of systems and many others are challenging problems in robotics.
-Moreover, these problems have to be often solved in real-time applications which makes them even more challenging.
-To be able to solve them efficiently, these problems are typically formulated as systems of polynomial equations and inequalities or as polynomial optimization tasks.
-
-The state of the art methods for solving polynomial systems are based on polynomial algebra, i.e.\ on Gr\"obner bases computation and computation of eigenvalues and eigenvectors of multiplication matrices \cite{Cox-Little-Shea2015}.
-Contrary to this approach, in this work, we will use methods of non-linear optimization, especially techniques from semidefinite programming \cite{Lasserre}, to solve the polynomial systems.
-This is a novel idea in the field of robotics.
-Moreover, we can take advantage of these methods, because we are no longer limited to systems of polynomial equations, but we can also take into account polynomial inequalities.
-These methods also allow us to solve polynomial optimization problems, i.e.\ to find a global optimal value of a polynomial function with given polynomial constraints.
-
-Moreover, some non-real solutions often appear as a side effect amongst real solutions when a geometric task is modeled as a polynomial problem.
-These superfluous non-real solutions are not solutions of the original geometric problem and are not relevant for us.
-Unfortunately, the state of the art methods from algebraic geometry can not be limited to find real solutions only.
-The contemporary approach is to find all complex solutions of the polynomial problem and filter the non-real solutions out afterward.
-With the use of the techniques from semidefinite programming \cite{Laurent2012} we can limit ourselves to real numbers only, and therefore save some computation time by not computing the non-real solutions.
