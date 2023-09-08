@@ -3,12 +3,12 @@ To make this chapter self-contained, we introduce the minimal possible amount of
 The overall review of the key concepts can be seen in \cite{Cox-Little-Shea2015}, which notation we will follow.
 
 \subsection{The polynomial ring, ideals and varieties}
-The ring of multivariate polynomials in $n$ variables $x_i$ with coefficients in $\R$ is denoted as $\R[x]$, where $x = \begin{bmatrix}x_1 & x_2 & \cdots & x_n\end{bmatrix}^\top$.
+In this section, we will consider polynomials in $n$ unknowns $x_1, x_2, \ldots, x_n$ with real coefficients.
 
 \begin{definition}[Monomial {\thecite[Chapter~1, §1, Definition~1]{Cox-Little-Shea2015}}]
-  A monomial in $x_1, x_2, \ldots , x_n$ is a product of the form
+  A monomial in variables $x_1, x_2, \ldots , x_n$ is a product of the form
   \begin{align}
-    x_1^{\alpha_1} x_2^{\alpha_2} \cdots x_n^{\alpha_n}
+    x_1^{\alpha_1} x_2^{\alpha_2} \cdots x_n^{\alpha_n},
   \end{align}
   where all of the exponents $\alpha_1, \alpha_2, \ldots, \alpha_n \in \N$.
   The total degree of this monomial is the sum $\alpha_1 + \alpha_2 + \cdots + \alpha_n$.
@@ -20,3 +20,17 @@ When we let $\alpha = \begin{bmatrix}\alpha_1 & \alpha_2 & \cdots & \alpha_n\end
 \end{align}
 Let us also denote $|\alpha| = \alpha_1 + \alpha_2 + \cdots + \alpha_n$ the total degree of the monomial $x^\alpha$.
 Note that $x^\alpha = 1$ when $\alpha = \begin{bmatrix}0 & 0 & \cdots & 0\end{bmatrix}^\top$.
+
+\begin{definition}[Polynomial {\thecite[Chapter~1, §1, Definition~2]{Cox-Little-Shea2015}}]
+  A polynomial $f$ in variables $x_1, x_2, \cdots, x_n$ with real coefﬁcients is a ﬁnite linear combination (with real coefﬁcients) of monomials.
+  We will write a polynomial $f$ in the form
+  \begin{align}
+    f &= \sum_{\alpha\in\N^n} a_\alpha x^\alpha,
+  \end{align}
+where $a_\alpha\in\R$.
+\end{definition}
+
+We call $a_\alpha$ the coefﬁcient of the monomial $x^\alpha$.
+If $a_\alpha \neq 0$, then we call $a_\alpha x^\alpha$ a term of the polynomial $f$.
+The total degree of the polynomial $f$ is denoted as $\deg(f) = \max_{\alpha\in\N^n} |\alpha|$ for non-zero coefficients $a_\alpha\in\R$.
+The set of all polynomials in variables $x = \begin{bmatrix}x_1 & x_2 & \cdots & x_n\end{bmatrix}^\top$ with real coefﬁcients is the ring of multivariate polynomials denoted as $\R[x]$.
