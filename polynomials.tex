@@ -1,7 +1,23 @@
 \chapter{Polynomials}
+In this chapter, we provide all required background that is needed to understand how systems of polynomial equations can be efficiently solved and how to solve polynomial optimization problems.
+A throughout description and understanding of this topic is required, since we will use the methods introduced in this chapter as building blocks later on in this thesis.
+
+Firstly, we introduce basic notation of the polynomial algebra.
+This will keep this chapter self-contained.
+
+Secondly, the state-of-the-art methods for solving systems of polynomial equations over complex numbers will be reviewed.
+First method is based on Gr\"obner bases computation, which is then used to create so-called multiplication matrix, which eigenvalues and eigenvectors are then used to compute the solutions.
+The other method is numerical.
+It is based on assumption that as we continuously transform an easy-to-solve polynomial system to the system we want to solve, the known solutions of the easy system are continuously transformed to the solutions we are looking for.
+
+And thirdly, we will focus on polynomial optimization, i.e.\ optimizing a polynomial function with constraints given as polynomial equations and inequalities.
+We will describe a method that finds the global optimum of a general polynomial optimization problem.
+It is based on moments and on solving hierarchies of semidefinite problems.
 
 \section{Polynomial algebra preliminaries}
 
 \section{Algebraic geometry}
 
 \section{Polynomial optimization}
+
+\section{Conclusions}
