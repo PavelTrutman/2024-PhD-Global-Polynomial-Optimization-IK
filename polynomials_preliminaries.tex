@@ -1,3 +1,22 @@
 \section{Polynomial algebra preliminaries}
 To make this chapter self-contained, we introduce the minimal possible amount of notation for polynomial algebra.
 The overall review of the key concepts can be seen in \cite{Cox-Little-Shea2015}, which notation we will follow.
+
+\subsection{The polynomial ring, ideals and varieties}
+The ring of multivariate polynomials in $n$ variables $x_i$ with coefficients in $\R$ is denoted as $\R[x]$, where $x = \begin{bmatrix}x_1 & x_2 & \cdots & x_n\end{bmatrix}^\top$.
+
+\begin{definition}[Monomial {\thecite[Chapter~1, §1, Definition~1]{Cox-Little-Shea2015}}]
+  A monomial in $x_1, x_2, \ldots , x_n$ is a product of the form
+  \begin{align}
+    x_1^{\alpha_1} x_2^{\alpha_2} \cdots x_n^{\alpha_n}
+  \end{align}
+  where all of the exponents $\alpha_1, \alpha_2, \ldots, \alpha_n \in \N$.
+  The total degree of this monomial is the sum $\alpha_1 + \alpha_2 + \cdots + \alpha_n$.
+\end{definition}
+
+When we let $\alpha = \begin{bmatrix}\alpha_1 & \alpha_2 & \cdots & \alpha_n\end{bmatrix}^\top$ to be a vector then we can simplify the notation for monomials by setting
+\begin{align}
+  x^\alpha &= x_1^{\alpha_1} x_2^{\alpha_2} \cdots x_n^{\alpha_n}.
+\end{align}
+Let us also denote $|\alpha| = \alpha_1 + \alpha_2 + \cdots + \alpha_n$ the total degree of the monomial $x^\alpha$.
+Note that $x^\alpha = 1$ when $\alpha = \begin{bmatrix}0 & 0 & \cdots & 0\end{bmatrix}^\top$.
