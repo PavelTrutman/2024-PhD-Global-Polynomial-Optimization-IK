@@ -1,15 +1,4 @@
 \chapter{[Old] Polynomial optimization methods}\labelcha{pol}
-In this chapter, we briefly review the methods for polynomial systems solving and for solving polynomial optimization problems.
-
-First, the state of the art method for solving systems of polynomial equations over complex numbers will be reviewed.
-This method is based on Gr\"obner bases~\cite{Becker93} computation.
-When a Gr\"obner basis is found then the solutions are obtained by computing eigenvalues and eigenvectors of so-called multiplication matrix.
-Secondly, we review method based on moments which can be used for solving systems of polynomial equations over real numbers and for solving polynomial optimization problems, i.e.\ optimizing a polynomial function with constraints given as polynomial equations and inequalities.
-This method is based on solving hierarchies of semidefinite problems.
-
-We introduce the minimal possible amount of notation for algebraic geometry.
-The overall review of the key concepts can be seen in~\cite{Cox-Little-Shea2015}.
-We will also follow the notation from~\cite{Cox-Little-Shea2015}.
 
 \section{The method of multiplication matrices}
 This method is widely used to find all complex solutions of a system of polynomials \refeqb{pol:mm:polynomialSystem}, where $x\in\C^n$ and $f_1, f_2, \ldots, f_m\in\C[x]$.
