@@ -14,23 +14,35 @@ In this section, we will consider polynomials in $n$ unknowns $x_1, x_2, \ldots,
   The total degree of this monomial is the sum $\alpha_1 + \alpha_2 + \cdots + \alpha_n$.
 \end{definition}
 
-When we let $\alpha = \begin{bmatrix}\alpha_1 & \alpha_2 & \cdots & \alpha_n\end{bmatrix}^\top$ to be a vector then we can simplify the notation for monomials by setting
+When we let $\alpha = \begin{pmatrix}\alpha_1 & \alpha_2 & \cdots & \alpha_n\end{pmatrix}$ to be an $N$-tuple then we can simplify the notation for monomials by setting
 \begin{align}
   x^\alpha &= x_1^{\alpha_1} x_2^{\alpha_2} \cdots x_n^{\alpha_n}.
 \end{align}
+We call the $N$-tuple $\alpha$ the multidegree of the monomial $x^\alpha$.
 Let us also denote $|\alpha| = \alpha_1 + \alpha_2 + \cdots + \alpha_n$ the total degree of the monomial $x^\alpha$.
-Note that $x^\alpha = 1$ when $\alpha = \begin{bmatrix}0 & 0 & \cdots & 0\end{bmatrix}^\top$.
+Note that $x^\alpha = 1$ when $\alpha = \begin{pmatrix}0 & 0 & \cdots & 0\end{pmatrix}$.
 
 \begin{definition}[Polynomial {\thecite[Chapter~1, §1, Definition~2]{Cox-Little-Shea2015}}]
-  A polynomial $f$ in variables $x_1, x_2, \cdots, x_n$ with real coefﬁcients is a ﬁnite linear combination (with real coefﬁcients) of monomials.
+  A polynomial $f$ in variables $x_1, x_2, \cdots, x_n$ with real coefficients is a finite linear combination (with real coefficients) of monomials.
   We will write a polynomial $f$ in the form
   \begin{align}
-    f &= \sum_{\alpha\in\N^n} a_\alpha x^\alpha,
+    f &= \sum_{\alpha\in\N^n} c_\alpha x^\alpha,
   \end{align}
-where $a_\alpha\in\R$.
+where $c_\alpha\in\R$, and there are only finitely many terms $c_\alpha x^\alpha$ in the sum.
 \end{definition}
 
-We call $a_\alpha$ the coefﬁcient of the monomial $x^\alpha$.
-If $a_\alpha \neq 0$, then we call $a_\alpha x^\alpha$ a term of the polynomial $f$.
-The total degree of the polynomial $f$ is denoted as $\deg(f) = \max_{\alpha\in\N^n} |\alpha|$ for non-zero coefficients $a_\alpha\in\R$.
-The set of all polynomials in variables $x = \begin{bmatrix}x_1 & x_2 & \cdots & x_n\end{bmatrix}^\top$ with real coefﬁcients is the ring of multivariate polynomials denoted as $\R[x]$.
+We call $c_\alpha$ the coefficient of the monomial $x^\alpha$.
+If $c_\alpha \neq 0$, then we call $c_\alpha x^\alpha$ a term of the polynomial $f$.
+The total degree of the polynomial $f$ is denoted as $\deg(f) = \max_{\alpha\in\N^n} |\alpha|$ for non-zero coefficients $c_\alpha\in\R$.
+The zero polynomial has no degree.
+The set of all polynomials in variables $x = \begin{bmatrix}x_1 & x_2 & \cdots & x_n\end{bmatrix}^\top$ with real coefficients is the ring of multivariate polynomials denoted as $\R[x]$.
+
+\begin{example}
+  Let us have polynomial $f \in\R[x, y, z]$ in three variables:
+  \begin{align}
+    f &= x^3y - 4xz^2 + \frac{2}{3}z^2 + 1.
+  \end{align}
+  The polynomial $f$ is a sum of four terms.
+  The second term $-4xz^2$ with multidegree $\alpha = \begin{pmatrix}1 & 0 & 2\end{pmatrix}$ has a coefficient $-4$ and monomial $xz^2$.
+  The total degree of this monomial is $1 + 0 + 2 = 3$, but the total degree $\deg(f)$ of the polynomial $f$ is 4, because of the monomial $x^3y$.
+\end{example}
