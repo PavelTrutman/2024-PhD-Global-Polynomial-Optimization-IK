@@ -24,15 +24,6 @@
 % to inlucude pdf pages
 \usepackage{pdfpages}
 
-% list of symbols and abbreviations
-\usepackage[acronym,nonumberlist,style=long,sort=def]{glossaries}
-\setlength{\glsdescwidth}{0.6\linewidth}
-\setlength{\glspagelistwidth}{0.4\linewidth}
-\renewcommand*{\glsgroupskip}{}
-\newcommand{\Acronym}[2]{\newacronym{#1}{#1}{#2}}
-\input{acronyms}
-\makeglossaries
-
 % algorithmic macros and settings
 \newcounter{counter}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
@@ -68,9 +59,11 @@
 \newcommand{\N}{\ensuremath{\mathbb{N}}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Zpn}{\mathbb{Z}_{\geq0}}
 \newcommand{\ie}{i.e.}
 \newcommand{\hide}[1]{}
 \newcommand{\Ideal}{\ensuremath{\mathcal{I}}}
+\newcommand{\Rx}{\mathbb{R}[x]}
 \newcommand{\MM}{\ensuremath{\mathcal{X}}}
 \newcommand{\FFFF}{\ensuremath{F_4}}
 \newcommand{\FFFFF}{\ensuremath{F_5}}
@@ -140,6 +133,15 @@
     morecomment=[l]{\#},
     morestring=[b]"
 }
+
+% list of symbols and abbreviations
+\usepackage[acronym,nonumberlist,style=long,sort=def]{glossaries}
+\setlength{\glsdescwidth}{0.6\linewidth}
+\setlength{\glspagelistwidth}{0.4\linewidth}
+\renewcommand*{\glsgroupskip}{}
+\newcommand{\Acronym}[2]{\newacronym{#1}{#1}{#2}}
+\input{acronyms}
+\makeglossaries
 
 \startThesisInfo
 \title{Global Polynomial Optimization in Inverse Kinematics}
