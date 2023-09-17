@@ -78,6 +78,21 @@ The set $\langle f_1, f_2, \ldots, f_m\rangle$ is an ideal and we call it the id
   \end{align}
 \end{definition}
 
-Note that always holds that $\Ideal \subseteq \rIdeal$.
+%TODO Real Radical Ideal
+
+Note that it always holds that $\Ideal \subseteq \rIdeal$.
 The reason is that taking every polynomial $f \in \Ideal$, \ie{} $f^1 \in \Ideal$, which implies by definition that $f$ is in \rIdeal.
 Moreover, $\Ideal = \rIdeal$ if and only if the ideal $\Ideal$ is radical.
+
+\begin{definition}[Affine variety {\thecite[Chapter~1, §2, Definition~1]{Cox-Little-Shea2015}}]
+  Let $f_1, f_2, \ldots, f_m$ be polynomials in \Rx.
+  Then we set
+  \begin{align}
+    \VarC(f_1, f_2, \ldots, f_m) &= \big\{\xi \in \C^n\ |\ f_i(\xi) = 0\text{ for all }1 \leq i \leq m\big\}.
+  \end{align}
+  We call $\VarC(f_1, f_2, \ldots, f_m)$ the affine variety defined by the polynomials $f_1, f_2, \ldots, f_m$.
+\end{definition}
+
+%TODO Real variety
+
+%TODO Vanishing ideal
