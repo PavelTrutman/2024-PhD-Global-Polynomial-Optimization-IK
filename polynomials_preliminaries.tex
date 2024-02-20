@@ -153,10 +153,42 @@ Let us better explain the defined objects and their relations in the following e
   This hold for $m = 1$ and $h(x) = x(x-1)(x+3)$.
   We are getting:
   \begin{align}
-    f_{\sqrt[\R]{}}^{2m}(x) + h^2(x) &= (x-1)^2(x+3)^2 + x^2(x-1)^2(x+3)^2\\
+    f_{\sqrt[\R]{}}^{2}(x) + h^2(x) &= (x-1)^2(x+3)^2 + x^2(x-1)^2(x+3)^2\\
     &= (x-1)^2(x+3)^2(x^2+1)\\
     &= (x+3)f(x)
   \end{align}
   Where $(x+3)f(x)$ is in \Ideal{} as it is a polynomial multiple of $f(x)$.
 
 \end{example}
+
+An ideal factors the whole \Rx{} to equivalence classes that form a commutative ring.
+How the ring is constructed and what are its properties describe the following definitions and theorem.
+
+\begin{definition}[Congruence modulo \Ideal{} {\thecite[Chapter~5, §2, Definition~1]{Cox-Little-Shea2015}}]
+Let $\Ideal \subseteq \Rx$ be an ideal, and let $f$ and $g \in \Rx$ be polynomials.
+We say $f$ and $g$ are congruent modulo \Ideal{} , denoted as $f \equiv g \text{ mod } \Ideal$, if $f - g \in \Ideal$.
+\end{definition}
+
+It can be shown that the congruence modulo \Ideal{} is an equivalence relation on \Rx.
+And an equivalence relation on \Rx{} partitions \Rx{} into a collection of disjoint subsets called equivalence classes.
+For any polynomial $f \in \Rx$, the equivalence class of $f$ is the set
+\begin{align}
+  [f] &= \{g \in \Rx\ |\ g \equiv f \text{ mod } \Ideal\}.
+\end{align}
+
+\begin{definition}[Quotient \RxI{} {\thecite[Chapter~5, §2, Definition~4]{Cox-Little-Shea2015}}]
+  The quotient of \Rx{} modulo \Ideal{}, written as \RxI, is the set of all equivalence classes of polynomials in \Rx{} for congruence modulo \Ideal{}:
+  \begin{align}
+    \RxI &= \{[f]\ |\ f \in \Rx\}.
+  \end{align}
+\end{definition}
+
+\begin{theorem}[{\thecite[Chapter~5, §2, Theorem~6]{Cox-Little-Shea2015}}]
+  Let \Ideal{} be an ideal in \Rx{}.
+  The quotient \RxI{} is a commutative ring under the sum and product operations given as follows:
+  \begin{align}
+    [f] + [g] &= [f+g],\\
+    [f][g] &= [fg],
+  \end{align}
+  where $[f]$ and $[g]$ are two classes from \RxI.
+\end{theorem}
